@@ -4,7 +4,7 @@ var express	=	require('express');
 var app	=	express();
 var bodyParser	=	require('body-parser');
 var mailer = require('nodemailer');
-var pw = require('./password');
+
 
 
 app.use('/css',express.static(__dirname + '/css'));
@@ -19,14 +19,14 @@ app.post('/mail',function(req,res){
 	var sender = mailer.createTransport({
 		service : 'gmail',
 		auth: {
-			user: 'adityahirapara2016@gmail.com',
-			pass: pw
+			user: 'example@gmail.com',
+			pass: 'password'
 		}
 	});
 
 	var mail = {
 		from : req.body.email,
-		to : 'adityahirapara2016@gmail.com',
+		to : 'example@gmail.com',
 		subject : req.body.question,
 		text : req.body.more
 	};
