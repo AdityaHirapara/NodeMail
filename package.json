@@ -1,0 +1,23 @@
+{
+  "name": "mailing",
+  "version": "1.0.0",
+  "description": "This is mailing function using node js.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \\\"Error No test applied\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdityaHirapara/Mailing.git"
+  },
+  "author": "Aditya Hirapara",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/AdityaHirapara/Mailing/issues"
+  },
+  "homepage": "https://github.com/AdityaHirapara/Mailing#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "nodemailer": "^4.4.0"
+  }
+}
