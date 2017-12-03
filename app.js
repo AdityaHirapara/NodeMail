@@ -6,27 +6,30 @@ var bodyParser	=	require('body-parser');
 var mailer = require('nodemailer');
 
 
-
+//functionality to express
 app.use('/css',express.static(__dirname + '/css'));
 app.use('/node_modules',express.static(__dirname + '/node_modules'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+//get main page(form)
 app.get('/',function(req,res){
 	res.sendFile('mailform.html',{'root' : __dirname +''});
 });
+
+//when form is submitted
 app.post('/mail',function(req,res){
 	var sender = mailer.createTransport({
 		service : 'gmail',
 		auth: {
-			user: 'example@gmail.com',
-			pass: 'password'
+			user: 'yourMail@gmail.com',
+			pass: 'yourPassword'
 		}
 	});
 
 	var mail = {
 		from : req.body.email,
-		to : 'example@gmail.com',
+		to : 'yourMail@gmail.com',
 		subject : req.body.question,
 		text : req.body.more
 	};
