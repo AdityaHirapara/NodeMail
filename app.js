@@ -22,14 +22,14 @@ app.post('/mail',function(req,res){
 	var sender = mailer.createTransport({
 		service : 'gmail',
 		auth: {
-			user: 'yourMail@gmail.com',
+			user: 'yourMail(sender)@gmail.com',
 			pass: 'yourPassword'
 		}
 	});
 
 	var mail = {
 		from : req.body.email,
-		to : 'yourMail@gmail.com',
+		to : 'yourMail(receiver)@gmail.com',
 		subject : req.body.question,
 		text : req.body.more
 	};
